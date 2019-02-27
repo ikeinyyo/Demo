@@ -2,6 +2,7 @@ import sys
 from utils.args import get_argument, get_integer_argument
 from providers.fib import fib
 from providers.factorial import factorial
+from providers.calcs import mult
 
 def main(argv):
     method = get_argument(argv, 0)
@@ -9,6 +10,8 @@ def main(argv):
         fib(get_integer_argument(argv, 1))
     elif method == "fac":
         factorial(get_integer_argument(argv, 1))
+    elif method == "mult":
+        mult(get_integer_argument(argv, 1), get_integer_argument(argv, 2))
     else:
         print("The method is not valid")
 
