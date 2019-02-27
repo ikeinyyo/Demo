@@ -24,26 +24,30 @@ def div(a,b):
     print(calc_div(a, b))
 
 def calc_div(a,b):
-    if a <= b:
+    if a < b:
         return 0
     else:
         return 1 + calc_div(a-b,b)
-    '''
-    if a == b:
-        return 1
-    elif a < b:
-        return 0
-    else:
-        return 1 + calc_div(a-b,b)
-    '''
 
 def mod(a, b):
     print(calc_mod(a,b))
 
 def calc_mod(a,b):
-    if a == b:
+    if a <= b:
         return 0
     elif a < b:
         return a
     else:
         return calc_mod(a-b,b)
+
+def is_prime(a):
+    print(calc_is_prime(a, 2))
+
+def calc_is_prime(n,j):
+    if n<2:
+        return False
+    if j==n:
+        return True
+    if calc_mod(n,j) == 0:
+        return False
+    return calc_is_prime(n,j+1)
