@@ -19,3 +19,20 @@ def calc_pot(b,n):
     else:
         pot = calc_pot(b, (n-1)/2)
         return calc_mult(calc_mult(pot, pot), b)
+
+def div(a,b):
+    print(calc_div(a, b))
+
+def calc_div(a,b):
+    if a < b:
+        return 0
+    else:
+        return 1 + calc_div(a-b,b)
+    '''
+    if a == b:
+        return 1
+    elif a < b:
+        return 0
+    else:
+        return 1 + calc_div(a-b,b)
+    '''
